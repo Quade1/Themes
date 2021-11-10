@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,8 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Custom Controls\Input.xaml.cs">
+      <DependentUpon>Input.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theme settings\CustomTextbox.xaml.cs">
+      <DependentUpon>CustomTextbox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Theme settings\CustomButton.xaml.cs">
       <DependentUpon>CustomButton.xaml</DependentUpon>
@@ -72,9 +79,22 @@
     <Compile Include="Theme settings\CustomWindow.xaml.cs">
       <DependentUpon>CustomWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Theme settings\Extensions.cs" />
+    <Page Include="Custom Controls\Input.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme settings\CustomTextbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme settings\CustomLabel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Theme settings\Options.xaml">
       <SubType>Designer</SubType>
@@ -115,6 +135,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

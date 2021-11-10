@@ -76,7 +76,7 @@ namespace Themes.Theme_settings
             else
             {
                 window.WindowState = WindowState.Normal;
-                window.BorderThickness = new Thickness(0);
+                border.BorderThickness = new Thickness(0);
             }
 
         }
@@ -127,16 +127,17 @@ namespace Themes.Theme_settings
 
         private void UpdateBorder()
         {
-            if (window.WindowState == WindowState.Maximized)
+            /*if (window.WindowState == WindowState.Maximized)
             {
-                window.BorderBrush = new SolidColorBrush(Colors.Black);
-                window.BorderThickness = new Thickness(8);
+                border.BorderBrush = new SolidColorBrush(Colors.Black);
+                border.BorderThickness = new Thickness(100);
             }
             else
             {
-                window.BorderThickness = new Thickness(0);
-            }
+                border.BorderThickness = new Thickness(0);
+            }*/
         }
+
 
         private void Window_MouseMove(object sender, MouseEventArgs e)
         {
