@@ -19,9 +19,9 @@ namespace Themes.Theme_settings
             InitializeComponent();
         }
 
-        Window window;
-        Grid move;
-        Border border;
+        private Window window;
+        private Grid move;
+        private Border border;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             window = (Window)sender;
@@ -60,7 +60,7 @@ namespace Themes.Theme_settings
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            //window.Close();
+            window.Close();
         }
 
         private void MaximiseButton_Click(object sender, RoutedEventArgs e)
@@ -75,8 +75,8 @@ namespace Themes.Theme_settings
             }
             else
             {
-                window.WindowState = WindowState.Normal;
                 border.BorderThickness = new Thickness(0);
+                window.WindowState = WindowState.Normal;
             }
 
         }
@@ -127,15 +127,15 @@ namespace Themes.Theme_settings
 
         private void UpdateBorder()
         {
-            /*if (window.WindowState == WindowState.Maximized)
+            if (window.WindowState == WindowState.Maximized)
             {
-                border.BorderBrush = new SolidColorBrush(Colors.Black);
+                border.BorderBrush = new SolidColorBrush(Colors.Transparent);
                 border.BorderThickness = new Thickness(100);
             }
             else
             {
                 border.BorderThickness = new Thickness(0);
-            }*/
+            }
         }
 
 

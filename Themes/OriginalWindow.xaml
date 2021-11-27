@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:Class="Themes.OriginalWindow"
                     xmlns:local="clr-namespace:Themes">
-    <Style TargetType="{x:Type Window}">
+   <!--<Style TargetType="{x:Type Window}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -59,7 +59,7 @@
         <EventSetter Event="MouseMove" Handler="Window_MouseMove"/>
         <EventSetter Event="SizeChanged" Handler="Window_SizeChanged"/>
         <EventSetter Event="Loaded" Handler="Window_Loaded"/>
-    </Style>
+    </Style> -->
 
 </ResourceDictionary>
     
