@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Themes.Custom_Controls;
 
 namespace Themes
 {
@@ -22,6 +23,20 @@ namespace Themes
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            Focus();
+
+
+            /*Input input = new Input();
+            input.ShowDialog();*/
+            /*string name =*/ //input.GetInput("Name", "What's your name?");
+            //this.Input.Content = name;
         }
     }
 }

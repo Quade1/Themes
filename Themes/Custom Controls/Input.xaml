@@ -15,7 +15,7 @@
     <Grid>
         <TextBox x:Name="InputBox" Height="23" TextWrapping="Wrap" Text="Click to add text" VerticalAlignment="Center" Margin="10" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
         <Button Content="Button" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="10" Click="Button_Click"/>
-        <Label Style="{DynamicResource {x:Type Label}}" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="480" Height="29"/>
+        <Label x:Name="Question" Style="{DynamicResource {x:Type Label}}" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="480" Height="29"/>
 
     </Grid>
 </Window>

@@ -19,12 +19,20 @@ namespace Themes.Custom_Controls
     /// </summary>
     public partial class Input : Window
     {
-        public string GetInput(string Title, string Question)
+        string output;
+
+        public Input()
         {
             InitializeComponent();
+        }
+
+        public void GetInput(string Title, string Question)
+        {
+            //this.Title = Title;
+            //this.Question.Content = Question;
             ShowDialog();
 
-            return InputBox.Text;
+            //return output;
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -47,6 +55,7 @@ namespace Themes.Custom_Controls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            output = InputBox.Text;
             Close();
         }
     }
