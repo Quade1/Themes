@@ -4,6 +4,8 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Options.xaml"/>
         <ResourceDictionary Source="CustomButton.xaml"/>
+        <ResourceDictionary Source="CustomLabel.xaml"/>
+        <ResourceDictionary Source="CustomTextbox.xaml"/>
         <ResourceDictionary Source="CustomWindow.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

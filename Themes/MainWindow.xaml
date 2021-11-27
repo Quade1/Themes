@@ -3,12 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:custom="clr-namespace:Themes.Theme_settings"
         xmlns:local="clr-namespace:Themes"
+        
+        
+        custom:WindowExtensions.ShowClose="False"
+        custom:WindowExtensions.ShowIcon="False"
+        
         Style="{DynamicResource {x:Type Window}}"
         mc:Ignorable="d"
+        
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="100" Margin="284,184,0,-244" VerticalAlignment="Top" Width="285" Click="Button_Click"/>
-
-    </Grid>
+    <Grid/>
 </Window>

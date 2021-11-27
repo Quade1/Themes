@@ -16,6 +16,43 @@
     </Style>
 
     <Style TargetType="{x:Type Button}" x:Key="{x:Type Button}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{DynamicResource TextColor}"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border TextBlock.Foreground="{TemplateBinding Foreground}" x:Name="Border" BorderThickness="1">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{DynamicResource BorderMediumColor}"></SolidColorBrush>
+                        </Border.BorderBrush>
+                        <Border.Background>
+                            <SolidColorBrush Color="{DynamicResource ControlBackgroundColor}"></SolidColorBrush>
+                        </Border.Background>
+                        <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{DynamicResource ControlLightColor}"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Button}" x:Key="MoveControl">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="Foreground">
             <Setter.Value>
