@@ -46,7 +46,8 @@
         </Setter>
 
         <EventSetter Event="Loaded" Handler="TextBox_Loaded"/>
-        <EventSetter Event="KeyDown" Handler="TextBox_KeyDown"></EventSetter>
+        <EventSetter Event="KeyDown" Handler="TextBox_KeyDown"/>
+        <EventSetter Event="TextChanged" Handler="TextBox_TextChanged"/>
     </Style>
 
 </ResourceDictionary>

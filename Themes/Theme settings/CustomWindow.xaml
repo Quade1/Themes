@@ -8,60 +8,58 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
-                    <Border x:Name="MaximisedBorder" BorderBrush="Transparent" BorderThickness="0">
-                        <Border BorderBrush="White" BorderThickness="0" Loaded="Border_Loaded">
+                    <Border x:Name="MaximisedBorder" BorderBrush="White" BorderThickness="0" Loaded="Border_Loaded">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.Background>
+                                <SolidColorBrush Color="{DynamicResource WindowBackgroundColor}"/>
+                            </Grid.Background>
                             <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="40"/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Grid.Background>
-                                    <SolidColorBrush Color="{DynamicResource WindowBackgroundColor}"/>
-                                </Grid.Background>
                                 <Grid>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="40"/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
 
-                                        <Grid x:Name="Move" MouseDown="Move_MouseDown" Loaded="Move_Loaded" MouseUp="Move_MouseUp" Grid.ColumnSpan="2">
-                                            <Grid.Background>
-                                                <SolidColorBrush Color="{DynamicResource WindowMoveColor}"/>
-                                            </Grid.Background>
+                                    <Grid x:Name="Move" MouseDown="Move_MouseDown" Loaded="Move_Loaded" MouseUp="Move_MouseUp" Grid.ColumnSpan="2">
+                                        <Grid.Background>
+                                            <SolidColorBrush Color="{DynamicResource WindowMoveColor}"/>
+                                        </Grid.Background>
 
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition x:Name="IconColumn" Width="48"/>
-                                                <ColumnDefinition Width="1*"/>
-                                                <ColumnDefinition Width="2*"/>
-                                                <ColumnDefinition x:Name="MinimiseColumn" Width="48"/>
-                                                <ColumnDefinition x:Name="MaximiseColumn" Width="48"/>
-                                                <ColumnDefinition x:Name="CloseColumn" Width="48"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label HorizontalAlignment="Center" x:Name="Title" VerticalAlignment="Center" Panel.ZIndex="1" Grid.Column="1" Grid.ColumnSpan="6" FontSize="16" Foreground="#BCBBBB" Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition x:Name="IconColumn" Width="48"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition x:Name="MinimiseColumn" Width="48"/>
+                                            <ColumnDefinition x:Name="MaximiseColumn" Width="48"/>
+                                            <ColumnDefinition x:Name="CloseColumn" Width="48"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label HorizontalAlignment="Center" x:Name="Title" VerticalAlignment="Center" Panel.ZIndex="1" Grid.Column="1" Grid.ColumnSpan="6" FontSize="16" Foreground="#BCBBBB" Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"/>
 
-                                            <Image x:Name="IconImage" Width="32" Height="32" MouseUp="IconImage_MouseUp" Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}">
-                                                <Image.ContextMenu>
-                                                    <ContextMenu>
-                                                        <ContextMenu.Items>
-                                                            <MenuItem Header="Restore"></MenuItem>
-                                                            <MenuItem Header="Minmise"></MenuItem>
-                                                            <MenuItem Header="Maximise"></MenuItem>
-                                                            <MenuItem Header="Close"></MenuItem>
-                                                            <MenuItem Header="Refresh"></MenuItem>
-                                                        </ContextMenu.Items>
-                                                    </ContextMenu>
-                                                </Image.ContextMenu>
-                                            </Image>
-                                            <Button x:Name="MinimiseButton" Style="{DynamicResource MoveControl}" Click="MinimiseButton_Click" Grid.Column="3"  Content="🗕" Width="32" Height="32"/>
-                                            <Button x:Name="MaximiseButton" Style="{DynamicResource MoveControl}" Click="MaximiseButton_Click" Grid.Column="4" Content="🗖" Width="32" Height="32"/>
-                                            <Button x:Name="CloseButton" Style="{DynamicResource MoveControl}" Command="{Binding Path=CloseCommand}" Click="CloseButton_Click" Grid.Column="5" Content="X" Width="32" Height="32"/>
-                                        </Grid>
+                                        <Image x:Name="IconImage" Width="32" Height="32" MouseUp="IconImage_MouseUp" Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}">
+                                            <Image.ContextMenu>
+                                                <ContextMenu>
+                                                    <ContextMenu.Items>
+                                                        <MenuItem Header="Restore"></MenuItem>
+                                                        <MenuItem Header="Minmise"></MenuItem>
+                                                        <MenuItem Header="Maximise"></MenuItem>
+                                                        <MenuItem Header="Close"></MenuItem>
+                                                        <MenuItem Header="Refresh"></MenuItem>
+                                                    </ContextMenu.Items>
+                                                </ContextMenu>
+                                            </Image.ContextMenu>
+                                        </Image>
+                                        <Button x:Name="MinimiseButton" Style="{DynamicResource MoveControl}" Click="MinimiseButton_Click" Grid.Column="3"  Content="🗕" Width="32" Height="32"/>
+                                        <Button x:Name="MaximiseButton" Style="{DynamicResource MoveControl}" Click="MaximiseButton_Click" Grid.Column="4" Content="🗖" Width="32" Height="32"/>
+                                        <Button x:Name="CloseButton" Style="{DynamicResource MoveControl}" Command="{Binding Path=CloseCommand}" Click="CloseButton_Click" Grid.Column="5" Content="X" Width="32" Height="32"/>
                                     </Grid>
                                 </Grid>
-                                <ContentPresenter Grid.Row="1"/>
                             </Grid>
-                        </Border>
+                            <ContentPresenter Grid.Row="1"/>
+                        </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Themes.Theme_settings;
 
 namespace Themes.Custom_Controls
 {
@@ -26,13 +27,13 @@ namespace Themes.Custom_Controls
             InitializeComponent();
         }
 
-        public void GetInput(string Title, string Question)
+        public string GetInput(string Title, string Question)
         {
-            //this.Title = Title;
-            //this.Question.Content = Question;
+            this.Title = Title;
+            this.Question.Content = Question;
             ShowDialog();
 
-            //return output;
+            return output;
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -58,5 +59,7 @@ namespace Themes.Custom_Controls
             output = InputBox.Text;
             Close();
         }
+
+        
     }
 }

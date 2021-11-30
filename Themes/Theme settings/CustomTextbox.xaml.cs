@@ -14,11 +14,9 @@ namespace Themes.Theme_settings
 {
     public partial class CustomTextbox
     {
-        TextBox tb;
-
         public CustomTextbox()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void OnPaste(object sender, DataObjectPastingEventArgs e)
@@ -31,10 +29,6 @@ namespace Themes.Theme_settings
             if(e.Key == Key.Enter)
             {
                 MessageBox.Show("enter!");
-            }
-            if (e.KeyboardDevice.Modifiers != ModifierKeys.None)
-            {
-                e.Handled = true;
             }
             if (!CheckChar(e.Key.ToString()[0]))
             {
@@ -54,6 +48,21 @@ namespace Themes.Theme_settings
         private void TextBox_Loaded(object sender, RoutedEventArgs e)
         {
             DataObject.AddPastingHandler((TextBox)sender, OnPaste);
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            foreach (char c in textBox.Text)
+            {
+                if (!char.IsLetterOrDigit(c) && !char.IsWhiteSpace(c))
+                {
+                    int pos = textBox.SelectionStart;
+                    int length = textBox.SelectionLength;
+                    textBox.Text = textBox.Text.Replace(c.ToString(), string.Empty);
+                    textBox.Select(pos, length);
+                }
+            }
         }
     }
 

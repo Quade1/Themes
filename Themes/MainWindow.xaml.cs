@@ -27,8 +27,8 @@ namespace Themes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Input input = new Input();
+            input.GetInput("Name", "What's your name?");
 
             Focus();
 
