@@ -17,7 +17,7 @@
         
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="372,200,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label x:Name="Input" Content="Label" HorizontalAlignment="Left" Margin="128,80,0,0" VerticalAlignment="Top" Height="41" Width="98"/>
+        <ComboBox HorizontalAlignment="Left" Margin="320,203,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
+
 </Window>

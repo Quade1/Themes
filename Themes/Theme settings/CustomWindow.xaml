@@ -4,11 +4,12 @@
                     xmlns:local="clr-namespace:Themes.Theme_settings"
                     xmlns:custom="clr-namespace:Themes.Theme_settings">
     <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}">
-        <Setter Property="SnapsToDevicePixels" Value="true" />        
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
-                    <Border x:Name="MaximisedBorder" BorderBrush="White" BorderThickness="0" Loaded="Border_Loaded">
+                    <Border x:Name="MaximisedBorder" BorderBrush="White" BorderThickness="1" Loaded="Border_Loaded">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="40"/>
@@ -52,9 +53,9 @@
                                                 </ContextMenu>
                                             </Image.ContextMenu>
                                         </Image>
-                                        <Button x:Name="MinimiseButton" Style="{DynamicResource MoveControl}" Click="MinimiseButton_Click" Grid.Column="3"  Content="🗕" Width="32" Height="32"/>
-                                        <Button x:Name="MaximiseButton" Style="{DynamicResource MoveControl}" Click="MaximiseButton_Click" Grid.Column="4" Content="🗖" Width="32" Height="32"/>
-                                        <Button x:Name="CloseButton" Style="{DynamicResource MoveControl}" Command="{Binding Path=CloseCommand}" Click="CloseButton_Click" Grid.Column="5" Content="X" Width="32" Height="32"/>
+                                        <Button x:Name="MinimiseButton" IsTabStop="False" Style="{DynamicResource MoveControl}" Click="MinimiseButton_Click" Grid.Column="3"  Content="🗕" Width="32" Height="32"/>
+                                        <Button x:Name="MaximiseButton" IsTabStop="False" Style="{DynamicResource MoveControl}" Click="MaximiseButton_Click" Grid.Column="4" Content="🗖" Width="32" Height="32"/>
+                                        <Button x:Name="CloseButton" IsTabStop="False" Style="{DynamicResource MoveControl}" Click="CloseButton_Click" Grid.Column="5" Content="X" Width="32" Height="32"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -62,10 +63,7 @@
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="WindowState" Value="Maximized">
-                            <Setter TargetName="MaximisedBorder" Property="BorderThickness" Value="6"></Setter>
-                        </Trigger>
-                        
+
                         <Trigger Property="custom:WindowExtensions.ShowIcon" Value="False">
                             <Setter TargetName="IconColumn" Property="Width" Value="0"></Setter>
                             <Setter TargetName="IconImage" Property="Visibility" Value="Hidden"></Setter>

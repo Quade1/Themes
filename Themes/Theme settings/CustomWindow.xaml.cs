@@ -72,6 +72,7 @@ namespace Themes.Theme_settings
             // but if it does then it will fix some stuff that could be broken
 
             Window window = Window.GetWindow((DependencyObject)sender);
+            Button button = (Button)sender;
 
             if (window.WindowState == WindowState.Normal)
             {
@@ -139,15 +140,22 @@ namespace Themes.Theme_settings
         private void UpdateBorder(Window window)
         {
             Border border = (Border)window.FindChild("MaximisedBorder", typeof(Border));
-
+            Button button = (Button)window.FindChild("MaximiseButton", typeof(Button));
             if (window.WindowState == WindowState.Maximized)
             {
-                border.BorderBrush = new SolidColorBrush(Colors.Transparent);
-                border.BorderThickness = new Thickness(100);
+                border.BorderBrush = new SolidColorBrush(Colors.Black);
+                border.BorderThickness = new Thickness(8);
+
+                button.FontSize = 16;
+                button.Content = "🗗︎";
             }
             else
             {
+                border.BorderBrush = new SolidColorBrush(Colors.White);
                 border.BorderThickness = new Thickness(0);
+
+                button.FontSize = 12;
+                button.Content = "🗖︎";
             }
         }
 
@@ -168,7 +176,6 @@ namespace Themes.Theme_settings
         }
 
         delegate void MyDelegateType(DisableEventArgs e);
-        static event MyDelegateType MyEventHandler;
 
         private void InitializeCursorMonitoring(Window window)
         {
@@ -227,7 +234,10 @@ namespace Themes.Theme_settings
                 windowChrome.GlassFrameThickness = new Thickness(0);
                 windowChrome.NonClientFrameEdges = System.Windows.Shell.NonClientFrameEdges.None;
             }
-            border.BorderThickness = new Thickness(0);
+            if (window.WindowState == WindowState.Normal)
+            {
+                border.BorderThickness = new Thickness(0);
+            }
         }
 
         private void Window_StateChanged(object sender, EventArgs e)

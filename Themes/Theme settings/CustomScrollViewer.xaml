@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                    
+                    x:Class="Themes.Theme_settings.CustomScrollViewer"
+                    xmlns:local="clr-namespace:Themes.Theme_settings">
+    <Style x:Key="{x:Type ScrollViewer}" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <Grid>
+                        <Grid.Background>
+                            <SolidColorBrush Color="{DynamicResource ControlSemiDarkColor}"/>
+                        </Grid.Background>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollContentPresenter CanContentScroll="{TemplateBinding CanContentScroll}" />
+                        <Border Grid.Column="1" BorderThickness="1,0,0,0">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="{DynamicResource BorderDarkColor}" />
+                            </Border.BorderBrush>
+                        </Border>
+                        <ScrollBar x:Name="PART_VerticalScrollBar" Value="{TemplateBinding VerticalOffset}" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                        <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Value="{TemplateBinding HorizontalOffset}" Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

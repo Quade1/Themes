@@ -7,5 +7,9 @@
         <ResourceDictionary Source="CustomLabel.xaml"/>
         <ResourceDictionary Source="CustomTextbox.xaml"/>
         <ResourceDictionary Source="CustomWindow.xaml"/>
+        <ResourceDictionary Source="CustomContextMenu.xaml"/>
+        <ResourceDictionary Source="CustomScrollViewer.xaml"/>
+        <ResourceDictionary Source="CustomScrollBar.xaml"/>
+        <ResourceDictionary Source="CustomCheckBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

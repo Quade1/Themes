@@ -25,6 +25,7 @@
 
     <Color x:Key="ControlLightColor">#606060</Color>
     <Color x:Key="ControlMediumColor">#404040</Color>
+    <Color x:Key="ControlSemiDarkColor">#252525</Color>
     <Color x:Key="ControlDarkColor">#202020</Color>
     
     <Color x:Key="ControlBackgroundColor">#404040</Color>
